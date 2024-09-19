@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Meu Site Pessoal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Fundo com gradiente verde escuro para preto */
+        body {
+            background: linear-gradient(45deg, #004d00, #000000);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Seção principal */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Estilo do botão */
+        .btn-custom {
+            background-color: #006400;
+            border: none;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: #003300;
+        }
+
+        /* Seção sobre */
+        .about {
+            padding: 50px 0;
+        }
+
+        /* Seção de rodapé */
+        footer {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Seção principal -->
+    <section class="hero">
+        <div class="container">
+            <h1>Bem-vindo ao Meu Site Pessoal</h1>
+            <p class="lead">Este é um exemplo de uma página única com Bootstrap, usando cores em degradê de verde escuro para preto.</p>
+            <a href="#about" class="btn btn-custom btn-lg">Saiba Mais</a>
+        </div>
+    </section>
+
+    <!-- Seção sobre mim -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <p>Olá, sou um desenvolvedor apaixonado por tecnologia. Tenho experiência em desenvolvimento web e adoro criar projetos inovadores. Este site foi desenvolvido usando Bootstrap e estilizado com um esquema de cores em degradê.</p>
+        </div>
+    </section>
+
+    <!-- Seção de contato -->
+    <section id="contact" class="contact bg-dark text-white">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Entre em contato comigo através dos canais abaixo:</p>
+            <ul>
+                <li>Email: exemplo@email.com</li>
+                <li>LinkedIn: <a href="#" class="text-white">Meu Perfil no LinkedIn</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Dráulio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
