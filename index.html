@@ -7,30 +7,31 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
-<body>
+<body onclick="closeStartMenu(event)">
     <div class="desktop">
-        <button class="icon" onclick="openWindow('Meu Computador')">Meu Computador</button>
+        <button class="icon" onclick="openWindow('Meu Computador', event)">Meu Computador</button>
     </div>
     
     <div class="taskbar">
-        <button class="start-button" onclick="toggleStartMenu()">☰</button>
+        <button class="start-button" onclick="toggleStartMenu(event)">☰</button>
         <div class="taskbar-text">Barra de Tarefas</div>
     </div>
     
     <div id="start-menu" class="start-menu hidden">
-        <button onclick="openWindow('Configurações')">Configurações</button>
+        <button onclick="openWindow('Configurações', event)">Configurações</button>
     </div>
 
     <script>
         let windows = [];
 
-        function openWindow(title) {
+        function openWindow(title, event) {
+            event.stopPropagation();
             const winId = Date.now();
             const win = document.createElement('div');
             win.className = 'window';
             win.id = `win-${winId}`;
             win.innerHTML = `
-                <div class="window-header">
+                <div class="window-header" onmousedown="dragWindow(event, 'win-${winId}')">
                     <span>${title}</span>
                     <button onclick="closeWindow(${winId})">✖</button>
                 </div>
@@ -46,8 +47,38 @@
             windows = windows.filter(w => w !== id);
         }
 
-        function toggleStartMenu() {
+        function toggleStartMenu(event) {
+            event.stopPropagation();
             document.getElementById('start-menu').classList.toggle('hidden');
+        }
+
+        function closeStartMenu(event) {
+            if (!event.target.closest('.start-button') && !event.target.closest('.start-menu')) {
+                document.getElementById('start-menu').classList.add('hidden');
+            }
+        }
+
+        function dragWindow(event, winId) {
+            event.preventDefault();
+            const win = document.getElementById(winId);
+            let shiftX = event.clientX - win.getBoundingClientRect().left;
+            let shiftY = event.clientY - win.getBoundingClientRect().top;
+
+            function moveAt(pageX, pageY) {
+                win.style.left = pageX - shiftX + 'px';
+                win.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            document.onmouseup = function () {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.onmouseup = null;
+            };
         }
     </script>
 </body>
@@ -113,6 +144,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: move;
     }
     .window-content {
         padding: 10px;
