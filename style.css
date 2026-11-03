@@ -29,13 +29,26 @@ body {
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .logo {
   font-weight: bold;
   font-size: 1.2rem;
   color: var(--accent);
+}
+
+/* Botão do menu hambúrguer escondido por padrão em telas grandes */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.navbar nav {
+  display: flex;
 }
 
 .navbar nav a {
@@ -227,4 +240,37 @@ pre {
   transform: translateY(-3px);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* Responsividade Mobile (Menu Suspenso) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    flex-direction: column;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .navbar nav a {
+    margin: 0.8rem 2rem;
+  }
+
+  .blog-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }

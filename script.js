@@ -1,7 +1,13 @@
 // Renderiza os ícones do Lucide
 lucide.createIcons();
 
-// 1. Navegação entre Páginas (SPA)
+// 1. Alternar menu mobile (hambúrguer)
+function toggleMenu() {
+  const navMenu = document.getElementById('nav-menu');
+  navMenu.classList.toggle('active');
+}
+
+// 2. Navegação entre Páginas (SPA)
 function navigate(sectionId) {
   document.querySelectorAll('.page-section').forEach(section => {
     section.classList.remove('active');
@@ -19,12 +25,18 @@ function navigate(sectionId) {
     }
   });
 
+  // Fecha o menu mobile ao clicar em um link
+  const navMenu = document.getElementById('nav-menu');
+  if (navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+  }
+
   if (sectionId === 'blog') {
     fetchBlogViews();
   }
 }
 
-// 2. Alternância de Abas na Seção Portfólio/Arquivos (Python, PySpark, SQL)
+// 3. Alternância de Abas na Seção Códigos (Python, PySpark, SQL)
 function switchTab(lang) {
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
@@ -33,7 +45,7 @@ function switchTab(lang) {
   document.getElementById(`tab-${lang}`).classList.add('active');
 }
 
-// 3. Contador de Visualizações da Página do Blog
+// 4. Contador de Visualizações da Página do Blog
 async function fetchBlogViews() {
   const viewsElement = document.getElementById('views-count');
   try {
@@ -50,7 +62,7 @@ async function fetchBlogViews() {
   }
 }
 
-// 4. Suporte a Hash na URL ao carregar a página
+// 5. Suporte a Hash na URL ao carregar a página
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
   if (hash) {

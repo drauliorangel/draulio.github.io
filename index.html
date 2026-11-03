@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dráulio Rangel | Engenheiro de Dados</title>
+  <title>Dráulio Rangel | Engenheiro de Dados & Portfólio</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Ícones via Lucide -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <!-- Navegação Principal -->
+  <!-- Navegação Principal Responsiva -->
   <header class="navbar">
-    <div class="logo">Dráulio Rangel</div>
-    <nav>
-      <a href="#sobre" class="nav-link active" onclick="navigate('sobre')">Sobre Mim</a>
-      <a href="#portfolio" class="nav-link" onclick="navigate('portfolio')">Arquivos / Portfólio</a>
+    <div class="logo">Dráulio</div>
+    
+    <!-- Botão do Menu Hamburguer para Celular -->
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir Menu">
+      <i data-lucide="menu"></i>
+    </button>
+
+    <nav id="nav-menu">
+      <a href="#sobre" class="nav-link active" onclick="navigate('sobre')">Sobre</a>
+      <a href="#portfolio" class="nav-link" onclick="navigate('portfolio')">Códigos</a>
       <a href="#blog" class="nav-link" onclick="navigate('blog')">Blog</a>
       <a href="#contato" class="nav-link" onclick="navigate('contato')">Contato</a>
     </nav>
@@ -23,14 +29,17 @@
 
   <main class="container">
 
-    <!-- SEÇÃO: SOBRE MIM (Resumo, Experiência e Formação) -->
+    <!-- SEÇÃO: SOBRE -->
     <section id="sobre" class="page-section active">
       <h1>Sobre Mim</h1>
       <p class="bio-lead">Engenheiro de Dados | AWS & GCP | Databricks, PySpark, Python e SQL</p>
       
       <div class="bio-content card">
-        <h3>Resumo Profissional</h3>
-        <p>Sou Engenheiro de Dados com experiência no desenvolvimento e na evolução de pipelines, arquitetura de dados em nuvem, integração de sistemas e otimização de processos de dados[cite: 1]. Atualmente no <strong>PicPay</strong>, atuo na sustentação de pipelines, otimização de performance e custos (com iniciativas de destaque que reduziram R$ 200 mil nos custos mensais), além de integrar plataformas de marketing[cite: 1]. Minha trajetória une sólida base em administração de bancos de dados, infraestrutura e engenharia analítica.</p>
+        <h3>Bem-vindo</h3>
+        <p>Bem-vindo ao meu espaço pessoal. Aqui compartilho projetos, códigos, scripts utilitários e artigos sobre dados, automação e desenvolvimento de software.</p>
+        
+        <h3 style="margin-top: 1.5rem;">Resumo Profissional</h3>
+        <p>Sou Engenheiro de Dados, com experiência no desenvolvimento e na evolução de pipelines, arquitetura de dados em cloud, integração de sistemas e otimização de processos de dados. Atualmente, trabalho no PicPay, atuando no desenvolvimento e na sustentação de pipelines, otimização de performance e custos, integração de plataformas de marketing e melhoria da confiabilidade de processos em produção. Um dos resultados relevantes da minha atuação foi a participação em iniciativas de otimização que contribuíram para uma redução de R$ 200 mil nos custos mensais, reforçando a importância de aliar eficiência técnica a resultados para o negócio.</p>
         
         <div class="skills-badges">
           <span>Python</span>
@@ -41,6 +50,7 @@
           <span>GCP</span>
           <span>Apache Airflow</span>
           <span>Salesforce Data Cloud</span>
+          <span>Salesforce Marketing Cloud</span>
           <span>MarTech</span>
         </div>
       </div>
@@ -49,44 +59,44 @@
         <h3>Experiência Profissional</h3>
         
         <div class="experience-item">
-          <h4>Engenheiro de Dados | PicPay</h4>
+          <h4>Engenheiro de dados | PicPay</h4>
           <span class="post-date">Junho de 2026 - Presente</span>
-          <p>Desenvolvimento e evolução de pipelines de dados, otimização de performance e custos de workloads em produção, iniciativas de otimização em Salesforce e Marketing Cloud (redução de R$ 200 mil/mês) e integração de plataformas[cite: 2].</p>
+          <p>Desenvolvimento e evolução de pipelines de dados, otimização de performance e custos de workloads em produção, iniciativas de otimização em Salesforce e Marketing Cloud associadas à redução de R$ 200 mil nos custos mensais, além de integração de plataformas e sustentação operacional.</p>
         </div>
 
         <div class="experience-item">
-          <h4>Engenheiro de Dados | Pmweb</h4>
+          <h4>Engenheiro de dados | Pmweb</h4>
           <span class="post-date">Agosto de 2021 - Junho de 2026</span>
-          <p>Projetos de migração de bancos de dados locais para a nuvem (redução superior a R$ 30 mil/mês em custos), implantação de plataformas de CRM e dados de clientes (Salesforce, Oracle, Braze, Insider) utilizando GCP, BigQuery, Python, SQL, dbt e Airflow[cite: 2, 3].</p>
+          <p>Projetos de migração de bancos de dados locais para a nuvem (redução superior a R$ 30 mil/mês em custos operacionais), implantação e integração de plataformas de CRM e dados de clientes (Salesforce, Oracle, Braze, Insider) utilizando GCP, BigQuery, Python, SQL, dbt e Apache Airflow.</p>
         </div>
 
         <div class="experience-item">
-          <h4>Analista de Banco de Dados | NovaQuest Contact Center</h4>
+          <h4>Analista de banco de dados | NovaQuest Contact Center</h4>
           <span class="post-date">Outubro de 2019 - Agosto de 2021</span>
-          <p>Administração e otimização de ambientes Microsoft SQL Server, automação de rotinas em Python, e construção de processos ETL/ELT com SSIS e Airflow[cite: 3, 4].</p>
+          <p>Administração, monitoramento e otimização de bancos de dados Microsoft SQL Server, automação de rotinas administrativas com Python, e construção de processos de ETL/ELT com SSIS, Apache Airflow e Python.</p>
         </div>
 
         <div class="experience-item">
           <h4>Supervisor de TI | Eico Cosméticos</h4>
           <span class="post-date">Março de 2015 - Outubro de 2019</span>
-          <p>Estruturação e internalização da área de TI, gestão de infraestrutura, redes e automação de processos operacionais utilizando Python e SQL[cite: 4, 5].</p>
+          <p>Estruturação e internalização da área de TI, gestão de infraestrutura de redes e sistemas, além do desenvolvimento de soluções e automações utilizando Python e SQL para otimizar rotinas operacionais.</p>
         </div>
       </div>
 
       <div class="card">
         <h3>Formação Acadêmica</h3>
         <ul class="education-list">
-          <li><strong>Pós-graduação em Engenharia de Dados</strong> — PUC Minas (2023 - 2024)[cite: 5]</li>
-          <li><strong>Graduação em Análise e Desenvolvimento de Sistemas</strong> — UNINOVE (2022 - 2023)[cite: 5]</li>
-          <li><strong>Graduação em Ciência de Dados</strong> — UNINOVE (2021 - 2022)[cite: 5]</li>
-          <li><strong>Graduação em Banco de Dados</strong> — UNINOVE (2020 - 2022)[cite: 5]</li>
+          <li><strong>Pós-graduação em Engenharia de Dados</strong> — PUC Minas (2023 - 2024)</li>
+          <li><strong>Graduação em Análise e Desenvolvimento de Sistemas</strong> — UNINOVE (2022 - 2023)</li>
+          <li><strong>Graduação em Ciência de Dados</strong> — UNINOVE (2021 - 2022)</li>
+          <li><strong>Graduação em Banco de Dados</strong> — UNINOVE (2020 - 2022)</li>
         </ul>
       </div>
     </section>
 
-    <!-- SEÇÃO: ARQUIVOS / PORTFÓLIO -->
+    <!-- SEÇÃO: CÓDIGOS / PORTFÓLIO -->
     <section id="portfolio" class="page-section">
-      <h1>Arquivos & Scripts</h1>
+      <h1>Códigos & Scripts</h1>
       <p>Navegue pelas abas abaixo para conferir trechos de código e soluções organizadas por linguagem:</p>
 
       <!-- Abas por Linguagem -->
@@ -99,58 +109,52 @@
       <!-- Conteúdo das Abas -->
       <div id="tab-python" class="tab-content active">
         <div class="card">
-          <h3>Automação de ETL e Integrações</h3>
-          <p>Exemplo de script em Python utilizado para automações de rotinas e requisições a APIs em pipelines de dados.</p>
+          <h3>Automação de Pipelines ETL e APIs</h3>
+          <p>Script Python para extração de dados via API REST e carga em armazenamento em nuvem com tratamento de exceções e logging.</p>
           <pre><code>import requests
 import logging
 
-def process_pipeline_data(endpoint_url):
+def extract_data(url):
     try:
-        response = requests.get(endpoint_url, timeout=30)
+        response = requests.get(url, timeout=30)
         response.raise_for_status()
-        data = response.json()
-        logging.info(f"Sucesso ao extrair {len(data)} registros.")
-        return data
+        return response.json()
     except Exception as e:
-        logging.error(f"Erro no processo de ingestão: {e}")
-        raise</code></pre>
+        logging.error(f"Erro na extração: {e}")
+        return None</code></pre>
         </div>
       </div>
 
       <div id="tab-pyspark" class="tab-content">
         <div class="card">
-          <h3>Processamento Distribuído com PySpark / Databricks</h3>
-          <p>Exemplo de leitura otimizada e transformações em ambientes de Big Data.</p>
+          <h3>Leitura e Transformação de Big Data</h3>
+          <p>Exemplo de leitura otimizada e agregação com PySpark DataFrames e Delta Lake.</p>
           <pre><code>from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, sum, current_timestamp
+from pyspark.sql.functions import col, avg
 
-spark = SparkSession.builder.appName("OptimizacaoPipeline").getOrCreate()
-
-df = spark.read.parquet("s3://data-lake-prod/raw/eventos/")
-df_tratado = df.filter(col("status") == "ACTIVE") \
-               .withColumn("processado_em", current_timestamp())
-
-df_tratado.write.mode("append").format("delta").save("s3://data-lake-prod/curated/eventos/")</code></pre>
+spark = SparkSession.builder.appName("DataAnalysis").getOrCreate()
+df = spark.read.parquet("s3://bucket/data/")
+df.filter(col("status") == "ATIVO") \
+  .groupBy("categoria") \
+  .agg(avg("valor").alias("media_valor")) \
+  .show()</code></pre>
         </div>
       </div>
 
       <div id="tab-sql" class="tab-content">
         <div class="card">
-          <h3>Window Functions e Otimização de Consultas (BigQuery / Postgres)</h3>
-          <p>Consulta avançada para particionamento e análise de métricas ao longo do tempo.</p>
+          <h3>Window Functions em BigQuery/PostgreSQL</h3>
+          <p>Consulta SQL avançada calculando média móvel e particionamento de clientes.</p>
           <pre><code>SELECT 
     cliente_id,
-    data_transacao,
-    valor_transacao,
-    SUM(valor_transacao) OVER(
+    data_pedido,
+    valor,
+    AVG(valor) OVER(
         PARTITION BY cliente_id 
-        ORDER BY data_transacao 
-        ROWS BETWEEN 30 PRECEDING AND CURRENT ROW
-    ) AS acumulado_movel_30d
-FROM 
-    faturamento_clientes
-WHERE 
-    data_transacao >= CURRENT_DATE - INTERVAL '90' DAY;</code></pre>
+        ORDER BY data_pedido 
+        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) AS media_movel_7d
+FROM vendas;</code></pre>
         </div>
       </div>
     </section>
@@ -168,15 +172,15 @@ WHERE
 
       <div class="blog-posts">
         <article class="card">
-          <h2>Estratégias de Otimização de Custos em Workloads de Nuvem</h2>
-          <span class="post-date">Publicado em: Novembro de 2026</span>
-          <p>Como abordagens orientadas a performance em pipelines de dados e ferramentas em nuvem ajudaram a destravar economias significativas em ambientes de grande escala.</p>
+          <h2>Boas Práticas no Tratamento de Big Data com PySpark</h2>
+          <span class="post-date">Publicado em: Outubro de 2026</span>
+          <p>Dicas essenciais para otimizar jobs em Spark, como evitar shuffling desnecessário e gerenciar particionamento no S3/Blob Storage.</p>
         </article>
 
         <article class="card">
-          <h2>Boas Práticas na Integração de Dados de MarTech e Plataformas de CRM</h2>
-          <span class="post-date">Publicado em: Outubro de 2026</span>
-          <p>Desafios e soluções na sincronização de dados de clientes entre arquiteturas de nuvem e ferramentas como Salesforce Marketing Cloud e Data Cloud.</p>
+          <h2>Como Modelar Data Warehouses Modernos com SQL</h2>
+          <span class="post-date">Publicado em: Setembro de 2026</span>
+          <p>Abordagens sobre arquiteturas de dados, dimensional vs. Data Vault, e como estruturar tabelas fato e dimensão.</p>
         </article>
       </div>
     </section>
@@ -184,7 +188,7 @@ WHERE
     <!-- SEÇÃO: CONTATO -->
     <section id="contato" class="page-section">
       <h1>Contato</h1>
-      <p>Sinta-se à vontade para entrar em contato ou se conectar profissionalmente:</p>
+      <p>Sinta-se à vontade para entrar em contato ou se conectar nas redes sociais:</p>
 
       <div class="contact-grid">
         <a href="https://github.com/drauliorangel" target="_blank" class="contact-card">
