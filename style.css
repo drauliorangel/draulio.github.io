@@ -271,9 +271,9 @@ h3 {
 }
 
 .edu-year {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: auto;
 }
 
 /* Tabs */
